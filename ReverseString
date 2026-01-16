@@ -1,0 +1,24 @@
+#include <iostream> 
+#include <string>
+using namespace std;
+
+int main(){
+
+string normal = "Hello";
+int normal_length = normal.size()-1;
+char temp;
+
+for (int i=0; i < normal_length/2; i++){
+ 
+temp=normal[normal_length-i];           
+
+normal[normal_length-i]=normal[0+i]; 
+
+normal[0+i]=temp; 
+
+} 
+
+cout << "Reversed string: " << normal << ".";
+
+return 0;
+} 
