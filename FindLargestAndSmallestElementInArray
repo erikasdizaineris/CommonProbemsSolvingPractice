@@ -1,0 +1,17 @@
+#include <iostream> 
+#include <string>
+#include <algorithm>
+using namespace std;
+
+int main(){
+	
+int numbers[4]={3, 5, 1, 8};
+
+int numbers_length= sizeof(numbers)/sizeof(numbers[0])-1;
+
+sort(numbers, numbers + numbers_length);
+
+cout << "Highest number: " << numbers[numbers_length] << endl;
+cout << "Lowest number: " << numbers[0] << endl;
+
+return 0;
