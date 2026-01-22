@@ -1,0 +1,39 @@
+#include <iostream> 
+#include <string>
+using namespace std;
+
+bool checkPal(int i, string phrase, int phraseLength, int lengthToCheck){
+	
+if (phraseLength < 3){
+	return false;
+}
+
+if (phrase[i++] != phrase[phraseLength--]){
+	return false;
+}
+
+if (i < lengthToCheck){
+	return checkPal(i, phrase, phraseLength, lengthToCheck);
+}
+return true;
+}
+
+int main(){
+
+string phrase="madam";
+
+int i = 0;
+
+int phraseLength = phrase.length()-1;
+
+int lengthToCheck=phrase.length()/2-1;
+
+if (checkPal(i, phrase, phraseLength, lengthToCheck) == 0) {
+	cout << phrase << " IS NOT a palindrome.";
+}
+else {
+    cout << phrase << " IS a palindrome.";
+}
+
+return 0;
+} 
